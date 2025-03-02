@@ -4,7 +4,7 @@ import { Button, Input, Modal, ModalProps } from "antd";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type ChildrenFormType = {
-  number: number;
+  test: string;
 };
 
 const ChildrenForm = (props: ModalProps) => {
@@ -15,15 +15,13 @@ const ChildrenForm = (props: ModalProps) => {
   };
   return (
     <Modal centered getContainer={false} forceRender {...props}>
-      <div
-        className="w-full max-w-[600px] mx-auto flex flex-col gap-6"
-        // onSubmit={handleSubmit(onSubmit)}
-      >
+      <div className="w-full max-w-[600px] mx-auto flex flex-col gap-6">
+        <h1 className="text-lg font-semibold text-center">Children Form</h1>
         <MyController
           control={control}
-          name="number"
+          name="test"
           label={{
-            label: "Number",
+            label: "Test",
           }}
         >
           <Input />

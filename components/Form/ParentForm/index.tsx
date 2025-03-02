@@ -21,42 +21,45 @@ const ParentForm = () => {
   const handelCancelChild = () => setOpenChild(false);
 
   return (
-    <form
-      className="w-full max-w-[600px] mx-auto flex flex-col gap-6"
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      <MyController
-        name="last_name"
-        control={control}
-        label={{
-          label: "Last name",
-        }}
+    <div className="w-full mt-[200px]">
+      <form
+        className="w-full max-w-[600px] mx-auto flex flex-col gap-6"
+        onSubmit={handleSubmit(onSubmit)}
       >
-        <Input />
-      </MyController>
-      <MyController
-        name="first_name"
-        control={control}
-        label={{
-          label: "First name",
-        }}
-      >
-        <Input />
-      </MyController>
+        <h1 className="text-lg font-semibold text-center">Parent Form</h1>
+        <MyController
+          name="last_name"
+          control={control}
+          label={{
+            label: "Last name",
+          }}
+        >
+          <Input />
+        </MyController>
+        <MyController
+          name="first_name"
+          control={control}
+          label={{
+            label: "First name",
+          }}
+        >
+          <Input />
+        </MyController>
 
-      <div className="flex justify-end items-center gap-5">
-        <Button onClick={() => setOpenChild(true)}>Open child form</Button>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </div>
+        <div className="flex justify-end items-center gap-5">
+          <Button onClick={() => setOpenChild(true)}>Open child form</Button>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </div>
 
-      <ChildrenForm
-        open={openChild}
-        onCancel={handelCancelChild}
-        footer={null}
-      />
-    </form>
+        <ChildrenForm
+          open={openChild}
+          onCancel={handelCancelChild}
+          footer={null}
+        />
+      </form>
+    </div>
   );
 };
 
